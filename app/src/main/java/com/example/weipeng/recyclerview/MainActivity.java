@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         public SparseArray<String> titles = new SparseArray<>();
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            if(isTitle(viewType)){
+            if(isTitle(viewType - 100000)){
                 View v = LayoutInflater.from(MainActivity.this).inflate(R.layout.item_title,parent,false);
                 TitleViewHolder titleViewHolder = new TitleViewHolder(v);
                 return titleViewHolder;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemViewType(int position) {
-            if(isTitle(position)){
+            if(isTitle(position + 100000)){
                 return position;
             }
             return super.getItemViewType(position);
